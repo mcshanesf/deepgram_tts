@@ -1,9 +1,0 @@
-{
-  "domain": "deepgram_tts",
-  "name": "Deepgram TTS",
-  "version": "1.0",
-  "documentation": "https://github.com/mcshanesf/deepgram_tts",
-  "requirements": ["aiohttp", "async_timeout", "voluptuous"],
-  "dependencies": [],
-  "codeowners": ["@mcshanesf"]
-}
