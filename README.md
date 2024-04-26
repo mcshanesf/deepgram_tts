@@ -2,7 +2,7 @@
 A custom component for Home Assistant to use Deepgram's Text-To-Speech API with the Assist Integration. Right now the only way I've gotten this to work is by hardcoding the api key into the main tts.py file. When I find an error-free way to do this, I will update the repo.
 
 ## Installation
-HACS > Integrations > 3 dots (upper top corner) > Custom repositories > URL: mcshanesf/deepgram_tts, Category: Integration > Add > wait > Deepgram TTS > Install
+Open HACS > Click the 3 dots in the upper right corner > Custom repositories > URL: https://github.com/mcshanesf/deepgram_tts, Category: Integration > Add > Wait for it show up in list > Close and search for Deepgram TTS > Download
 <br><br>
 Or manually copy deepgram_tts folder to /config/custom_components folder.
 
@@ -24,6 +24,8 @@ Then add the following to the configuration.yaml file:
 tts:
   - platform: deepgram_tts
 ```
+
+Restart Home Assistant and should be available to use in the Assist integration.<br>
 ## Model(Voice) Settings
 To change the model(voice) used for the tts, edit the following code in the deepgram_tts.py file and restart Home Assistant. A list of available models can be found <a href="https://developers.deepgram.com/docs/tts-models">here.</a>
 ``` yaml
