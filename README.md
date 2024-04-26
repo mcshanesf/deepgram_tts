@@ -19,6 +19,11 @@ class DeepgramProvider(Provider):
         self._api_key = "insert_your_api_key_here" #<---------
         self.name = "deepgram_tts"
 ```
+Then add the following to the configuration.yaml file:
+``` yaml
+tts:
+  - platform: deepgram_tts
+```
 ## Model(Voice) Settings
 To change the model(voice) used for the tts, edit the following code in the deepgram_tts.py file and restart Home Assistant. A list of available models can be found <a href="https://developers.deepgram.com/docs/tts-models">here.</a>
 ``` yaml
