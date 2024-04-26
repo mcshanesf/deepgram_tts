@@ -11,7 +11,10 @@ from homeassistant.helpers.aiohttp_client import async_get_clientsession
 _LOGGER = logging.getLogger(__name__)
 
 def setup_platform(hass, config, add_devices, discovery_info=None):
-    _LOGGER.debug("Setting up dg_tts platform")
+    """Set up the TTS platform."""
+    lang = config.get('language')
+    api_key = config.get('api_key')
+    add_devices([DeepgramProvider(hass, lang, api_key)])
 
 SUPPORT_LANGUAGES = ["en-US"]
 DEFAULT_LANG = "en-US"
@@ -25,16 +28,18 @@ def get_engine(hass, config, discovery_info=None):
     return DeepgramProvider(hass, lang)
 
 
+from homeassistant.components.tts import Provider
+
 class DeepgramProvider(Provider):
     """The Deepgram TTS API provider."""
 
-    def __init__(self, hass, lang):
+    def __init__(self, hass, lang, api_key):
         """Initialize the provider."""
         self._hass = hass
         self._lang = lang
-        # Hardcoding the API key
-        self._api_key = "06e9b9ed0302abb9a3faf3816aefe305a68e29b1"
-        self.name = "dg_tts"
+        # Retrieve the API key from the Home Assistant configuration
+        self._api_key = api_key
+        self.name = "deepgram_tts"
 
     @property
     def default_language(self):
