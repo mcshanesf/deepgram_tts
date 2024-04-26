@@ -32,7 +32,7 @@ class DeepgramProvider(Provider):
         """Initialize the provider."""
         self._hass = hass
         self._lang = lang
-        self._api_key = "ee7236c62be99656424dc3895b34feebd40a6f6e"
+        self._api_key = "insert_your_api_key_here"
         self.name = "deepgram_tts"
 
     @property
