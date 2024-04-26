@@ -23,3 +23,11 @@ tts:
 ```
 
 Restart Home Assistant and you should see deepgram_tts as an option in the Voice Assistant settings. 
+
+## Model(Voice) Settings
+To change the model(voice) used for the tts, edit the following code in the deepgram_tts.py file and restart Home Assistant. A list of available models can be found <a href="https://developers.deepgram.com/docs/tts-models">here.</a>
+``` yaml
+request_data = {'text': message}
+        url = 'https://api.deepgram.com/v1/speak?model=aura-angus-en' ## Replace with your chosen model.
+```
+
