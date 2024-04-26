@@ -1,5 +1,5 @@
 # deepgram_tts
-A custom component for Home Assistant to use Deepgram's Text-To-Speech API with the Assist Integration
+A custom component for Home Assistant to use Deepgram's Text-To-Speech API with the Assist Integration. Right now the only way I've gotten this to work is by hardcoding the api key into the main tts.py file. When I find an error-free way to do this, I will update the repo.
 
 ## Installation
 HACS > Integrations > 3 dots (upper top corner) > Custom repositories > URL: mcshanesf/deepgram_tts, Category: Integration > Add > wait > Deepgram TTS > Install
